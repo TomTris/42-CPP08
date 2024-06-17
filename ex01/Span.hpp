@@ -6,7 +6,7 @@
 /*   By: qdo <qdo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 17:55:57 by qdo               #+#    #+#             */
-/*   Updated: 2024/06/17 20:14:14 by qdo              ###   ########.fr       */
+/*   Updated: 2024/06/17 20:17:24 by qdo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <vector>
 #include <iostream>
+#include <exception>
 
 class Span {
 private:
