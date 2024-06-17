@@ -6,7 +6,7 @@
 /*   By: qdo <qdo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 17:55:57 by qdo               #+#    #+#             */
-/*   Updated: 2024/06/17 19:35:17 by qdo              ###   ########.fr       */
+/*   Updated: 2024/06/17 20:14:14 by qdo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ public:
 		const char *what() const throw();	
 	};
 	void	addNumber(int to_add);
-	void	addNumberImproved(int *to_add, int n);
+	void	addNumberImproved(int *to_add, unsigned int n);
 	int		shortestSpan(void);
 	int		longestSpan(void);
 };
