@@ -6,7 +6,7 @@
 /*   By: qdo <qdo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:19:47 by qdo               #+#    #+#             */
-/*   Updated: 2024/06/17 19:49:26 by qdo              ###   ########.fr       */
+/*   Updated: 2024/06/17 20:14:07 by qdo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Span::Span(unsigned int const & n) : N(n)
 	std::cout << "New Span with maximum of " << n << " integers was born" << std::endl;
 }
 
-const char *Span::MaxN::what() const throw() {return ("The container, It's already full");}
+const char *Span::MaxN::what() const throw() {return ("The container overflowed");}
 const char *Span::TooShort::what() const throw() {return ("The container, It has too little integers to calculate span");}
 
 void	Span::addNumber(int to_add)
@@ -29,15 +29,11 @@ void	Span::addNumber(int to_add)
 	_vec.push_back(to_add);
 }
 
-void	Span::addNumberImproved(int *to_add, int n)
+void	Span::addNumberImproved(int *to_add, unsigned int n)
 {
 	if (static_cast<unsigned long>(N) < static_cast<unsigned long>(n) + static_cast<unsigned long>(_vec.size()))
 		throw MaxN();
-	while (n > 0)
-	{
-		n--;
-		_vec.push_back(to_add[n]);
-	}
+	_vec.insert(_vec.end(), to_add, to_add + n);
 }
 
 int	Span::shortestSpan(void)
