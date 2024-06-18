@@ -21,7 +21,7 @@ int main()
 	}
 	std::cout << "------------------------- " << std::endl;
 	{
-		int ele_nbr = 8000;
+		int ele_nbr = 800000;
 		std::srand(std::time(NULL));
 		try {
 			Span sp(ele_nbr);

@@ -6,7 +6,7 @@
 /*   By: qdo <qdo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:19:47 by qdo               #+#    #+#             */
-/*   Updated: 2024/06/17 20:18:24 by qdo              ###   ########.fr       */
+/*   Updated: 2024/06/18 07:23:47 by qdo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,54 +36,40 @@ void	Span::addNumberImproved(int *to_add, unsigned int n)
 	_vec.insert(_vec.end(), to_add, to_add + n);
 }
 
-int	Span::shortestSpan(void)
+unsigned int	Span::shortestSpan(void)
 {
 	if (_vec.size() <= 1)
 		throw TooShort();
 	unsigned int shortest_span = 4294967295;
 	unsigned int span;
-	std::vector<int>::const_iterator ite1 = _vec.begin();
-	std::vector<int>::const_iterator ite2;
-	while (ite1 != _vec.end() -1)
+	std::vector<int> sorted = _vec;
+	std::sort(sorted.begin(), sorted.end());
+	std::vector<int>::iterator ite = sorted.begin() + 1;
+	while (ite != sorted.end())
 	{
-		ite2 = ite1 + 1;
-		while (ite2 != _vec.end())
-		{
-			if (*ite1 > *ite2)
-				span = *ite1 - *ite2;
-			else
-				span = *ite2 - *ite1;
-			if (span < shortest_span)
-				shortest_span = span;
-			ite2++;
-		}
-		ite1++;
+		span = *(ite) - *(ite - 1);
+		if (span < shortest_span)
+			shortest_span = span;
+		ite++;
 	}
 	return (shortest_span);
 }
 
-int	Span::longestSpan(void)
+unsigned int	Span::longestSpan(void)
 {
 	if (_vec.size() <= 1)
 		throw TooShort();
-	unsigned int longest_span = 0;
-	unsigned int span;
+	int	smallest = 2147483647;
+	int	biggest = -2147483648;
+	
 	std::vector<int>::const_iterator ite1 = _vec.begin();
-	std::vector<int>::const_iterator ite2;
-	while (ite1 != _vec.end() -1)
+	while (ite1 != _vec.end())
 	{
-		ite2 = ite1 + 1;
-		while (ite2 != _vec.end())
-		{
-			if (*ite1 > *ite2)
-				span = *ite1 - *ite2;
-			else
-				span = *ite2 - *ite1;
-			if (span > longest_span)
-				longest_span = span;
-			ite2++;
-		}
+		if (*ite1 > biggest)
+			biggest = *ite1;
+		if (*ite1 < smallest)
+			smallest = *ite1;
 		ite1++;
 	}
-	return (longest_span);
+	return (biggest - smallest);
 }
