@@ -6,7 +6,7 @@
 /*   By: qdo <qdo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 14:28:47 by qdo               #+#    #+#             */
-/*   Updated: 2024/06/17 17:49:56 by qdo              ###   ########.fr       */
+/*   Updated: 2024/06/18 07:06:32 by qdo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,32 +30,32 @@ int main() {
     ve.push_back(4);
     ve.push_back(5);
 
-    try{        easyFind(ve, 0);}
-    catch (NotExist &e){std::cout << e.what() << std::endl;}
+    try{ easyFind(ve, 0); }
+    catch ( NotExist &e){std::cout << e.what() << std::endl; }
     std::cout << "------------ -------- " << std::endl;
 
-    try{        easyFind(ve, 1);}
-    catch (NotExist &e){std::cout << e.what() << std::endl;}
+    try{ easyFind(ve, 1); }
+    catch ( NotExist &e){std::cout << e.what() << std::endl; }
     std::cout << "------------ -------- " << std::endl;
 
-    try{        easyFind(ve, 2);}
-    catch (NotExist &e){std::cout << e.what() << std::endl;}
+    try{ easyFind(ve, 2); }
+    catch ( NotExist &e){std::cout << e.what() << std::endl; }
     std::cout << "------------ -------- " << std::endl;
 
-    try{        easyFind(ve, 3);}
-    catch (NotExist &e){std::cout << e.what() << std::endl;}
+    try{ easyFind(ve, 3); }
+    catch ( NotExist &e){std::cout << e.what() << std::endl; }
     std::cout << "------------ -------- " << std::endl;
 
-    try{        easyFind(ve, 4);}
-    catch (NotExist &e){std::cout << e.what() << std::endl;}
+    try{ easyFind(ve, 4); }
+    catch ( NotExist &e){std::cout << e.what() << std::endl; }
     std::cout << "------------ -------- " << std::endl;
 
-    try{        easyFind(ve, 5);}
-    catch (NotExist &e){std::cout << e.what() << std::endl;}
+    try{ easyFind(ve, 5); }
+    catch ( NotExist &e){std::cout << e.what() << std::endl; }
     std::cout << "------------ -------- " << std::endl;
     
-    try{        easyFind(ve, 6);}
-    catch (NotExist &e){std::cout << e.what() << std::endl;}
+    try{ easyFind(ve, 6); }
+    catch ( NotExist &e){std::cout << e.what() << std::endl; }
     std::cout << "------------ -------- " << std::endl;
 
     // try
