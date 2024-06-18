@@ -6,7 +6,7 @@
 /*   By: qdo <qdo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 17:55:57 by qdo               #+#    #+#             */
-/*   Updated: 2024/06/17 20:17:24 by qdo              ###   ########.fr       */
+/*   Updated: 2024/06/18 07:12:49 by qdo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <vector>
 #include <iostream>
 #include <exception>
+#include <algorithm>
 
 class Span {
 private:
@@ -36,10 +37,10 @@ public:
 		public:
 		const char *what() const throw();	
 	};
-	void	addNumber(int to_add);
-	void	addNumberImproved(int *to_add, unsigned int n);
-	int		shortestSpan(void);
-	int		longestSpan(void);
+	void				addNumber(int to_add);
+	void				addNumberImproved(int *to_add, unsigned int n);
+	unsigned int		shortestSpan(void);
+	unsigned int		longestSpan(void);
 };
 
 #endif
